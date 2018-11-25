@@ -14,30 +14,36 @@ import GooglePlaces
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        if let googleKeysURL = Bundle.main.path(forResource: "GoogleKeys", ofType: "plist"){
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: googleKeysURL))
-                if let googleAPIkey = String(data: data, encoding: .utf8) {
-                    GMSServices.provideAPIKey(googleAPIkey)
-                }
-                else {
-                    print("Couldn't convert data to string api key")
+        if let googleKeysURL = Bundle.main.path(forResource: "GoogleKeys", ofType: "plist") {
+                guard let data = try? Data(contentsOf: URL(fileURLWithPath: googleKeysURL)) else {
+                    print("Error finding api data file")
+                    return false
                 }
                 
-            } catch {
-                print(error)
-                
+                guard let googleAPIkey = try? PropertyListSerialization.propertyList(from: data, options: PropertyListSerialization.ReadOptions(), format: nil) else {
+                    print("Couldn't convert property list from data.")
+                    return false
+                }
+            
+            guard let googleDict = googleAPIkey as? [String:String] else {
+                print("Couldn't create API key dictionary")
+                return false
             }
+            
+            guard let apiKey = googleDict["GoogleAPI"] else {
+                print("No API key found")
+                return false
+            }
+            
+            GMSServices.provideAPIKey(apiKey)
+            GMSPlacesClient.provideAPIKey(apiKey)
         }
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = ViewController()
-        window?.rootViewController = vc
-        window?.makeKeyAndVisible()
-        
+        else {
+            print("No google key plist found")
+        }
+
         return true
     }
 
