@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YCb-Q9-r4L">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,19 +10,134 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Start Screen View Controller-->
+        <!--ZagTour-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="StartScreenViewController" customModule="ZagTours" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJT-o1-SOS">
+                                <rect key="frame" x="16" y="301.5" width="343" height="30"/>
+                                <state key="normal" title="Start!"/>
+                                <connections>
+                                    <segue destination="suf-OH-Nef" kind="show" id="TmQ-dg-BHd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-Y1-gPo">
+                                <rect key="frame" x="16" y="80" width="343" height="101.5"/>
+                                <string key="text">Zag tours is an interactive app to give you a personalized tour across campus. By clicking a marker seen around campus you will start an Augmented Reality description for that landmark. To begin press start.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Toe-Y1-gPo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="KIa-hW-dZv"/>
+                            <constraint firstItem="Toe-Y1-gPo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ScU-5H-xhs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Toe-Y1-gPo" secondAttribute="trailing" constant="16" id="U1C-fg-yIB"/>
+                            <constraint firstItem="NJT-o1-SOS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="UyQ-vA-3tG"/>
+                            <constraint firstItem="NJT-o1-SOS" firstAttribute="top" secondItem="Toe-Y1-gPo" secondAttribute="bottom" constant="120" id="cP0-lr-2Pb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NJT-o1-SOS" secondAttribute="trailing" constant="16" id="cTp-Z2-qdl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="ZagTour" id="Ear-Ed-Kfa">
+                        <barButtonItem key="backBarButtonItem" title="Start" id="ZwL-Gp-TId"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="124.58770614692655"/>
+        </scene>
+        <!--Google Maps View Controller-->
+        <scene sceneID="Kzr-wr-tGu">
+            <objects>
+                <viewController id="suf-OH-Nef" customClass="GoogleMapsViewController" customModule="ZagTours" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LiQ-hT-csm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you see a marker as you walk around click on it!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfF-qs-CcU">
+                                <rect key="frame" x="16" y="562" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6y-Bz-5iJ" customClass="GMSMapView">
+                                <rect key="frame" x="16" y="80" width="343" height="466"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tfF-qs-CcU" firstAttribute="leading" secondItem="hjP-p7-BPl" secondAttribute="leading" constant="16" id="7jf-XJ-Ti8"/>
+                            <constraint firstItem="g6y-Bz-5iJ" firstAttribute="leading" secondItem="hjP-p7-BPl" secondAttribute="leading" constant="16" id="D55-rm-xSc"/>
+                            <constraint firstItem="hjP-p7-BPl" firstAttribute="bottom" secondItem="tfF-qs-CcU" secondAttribute="bottom" constant="64" id="N7B-Fa-9pP"/>
+                            <constraint firstItem="g6y-Bz-5iJ" firstAttribute="top" secondItem="hjP-p7-BPl" secondAttribute="top" constant="16" id="SmR-mo-EwR"/>
+                            <constraint firstItem="hjP-p7-BPl" firstAttribute="trailing" secondItem="g6y-Bz-5iJ" secondAttribute="trailing" constant="16" id="i2D-wf-w9U"/>
+                            <constraint firstItem="hjP-p7-BPl" firstAttribute="trailing" secondItem="tfF-qs-CcU" secondAttribute="trailing" constant="16" id="imi-xu-taU"/>
+                            <constraint firstItem="tfF-qs-CcU" firstAttribute="top" secondItem="g6y-Bz-5iJ" secondAttribute="bottom" constant="16" id="t0w-G4-vT7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hjP-p7-BPl"/>
+                    </view>
+                    <connections>
+                        <outlet property="campusMap" destination="g6y-Bz-5iJ" id="Ibx-0K-F1f"/>
+                        <segue destination="WqX-nE-23e" kind="show" identifier="arViewFromMarker" id="PFE-Bl-odv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kV-h8-tbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1826" y="125"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="ytW-lg-BeK">
+            <objects>
+                <viewController id="WqX-nE-23e" customClass="AVPlayerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ruy-n8-VrN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pld-VP-vKZ">
+                                <rect key="frame" x="64" y="128" width="247" height="475"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xzk-xv-966" firstAttribute="bottom" secondItem="Pld-VP-vKZ" secondAttribute="bottom" constant="64" id="7DX-iT-Ad2"/>
+                            <constraint firstItem="Xzk-xv-966" firstAttribute="trailing" secondItem="Pld-VP-vKZ" secondAttribute="trailing" constant="64" id="CyB-Bs-tJg"/>
+                            <constraint firstItem="Pld-VP-vKZ" firstAttribute="leading" secondItem="Xzk-xv-966" secondAttribute="leading" constant="64" id="hkQ-Eg-ojb"/>
+                            <constraint firstItem="Pld-VP-vKZ" firstAttribute="top" secondItem="Xzk-xv-966" secondAttribute="top" constant="64" id="ote-bL-t7d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xzk-xv-966"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8rj-cB-KH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2574" y="125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jfb-CX-blw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YCb-Q9-r4L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="imn-gf-BDg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fm2-tx-NAT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8N1-wX-K6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="292" y="-573.46326836581716"/>
         </scene>
     </scenes>
 </document>
