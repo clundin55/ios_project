@@ -9,6 +9,8 @@
 import UIKit
 
 class TourViewController: UIViewController {
+    
+    var marker: ZagMark? = nil
 
     @IBOutlet weak var markerNameLabel: UILabel!
     @IBOutlet weak var markerImageView: UIImageView!
@@ -17,6 +19,10 @@ class TourViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let marker = self.marker {
+            updateLabels(mark: marker)
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -29,6 +35,15 @@ class TourViewController: UIViewController {
     }
     
     @IBAction func websiteButtonPressed(_ sender: UIButton) {
+        if let marker = marker {
+            // TODO: Link to Gonzaga Website for URL
+        }
+    }
+    
+    func updateLabels(mark: ZagMark) {
+        self.markerNameLabel = mark.title
+        self.markerImageView = UIImage(named: mark.image)
+        self.markerDecriptionLabel = mark.description
         
     }
 }
