@@ -9,7 +9,7 @@
 import UIKit
 
 class TourViewController: UIViewController {
-
+    var zagMark: ZagMark? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
 
