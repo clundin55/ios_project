@@ -34,14 +34,16 @@ class TourViewController: UIViewController {
     
     @IBAction func websiteButtonPressed(_ sender: UIButton) {
         if let marker = marker {
-            // TODO: Link to Gonzaga Website for URL
+            if let link = URL(string: marker.websiteLink) {
+                UIApplication.shared.open(link)
+            }
         }
     }
     
     func updateLabels(mark: ZagMark) {
-        self.markerNameLabel = mark.title
-        self.markerImageView = UIImage(named: mark.image)
-        self.markerDecriptionLabel = mark.description
+        self.markerNameLabel.text = mark.title
+        self.markerImageView.image = UIImage(named: mark.image)
+        self.markerDecriptionLabel.text = mark.description
         
     }
 }
