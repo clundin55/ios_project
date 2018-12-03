@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YCb-Q9-r4L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YCb-Q9-r4L">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -99,9 +99,53 @@
                     <view key="view" contentMode="scaleToFill" id="ruy-n8-VrN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="OBV-If-x1T">
+                                <rect key="frame" x="8" y="72" width="359" height="519"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" text="Name of Marker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd2-Tk-QYJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="70.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="02d-q3-Df8">
+                                        <rect key="frame" x="0.0" y="94.5" width="359" height="214.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrL-On-jKr">
+                                        <rect key="frame" x="0.0" y="333" width="359" height="122"/>
+                                        <string key="text">The mission of the John J. Hemmingson Center is to provide a warm and inviting atmosphere to all. The University Center is a meeting place for all students as well as faculty, staff, alumni and the guests of Gonzaga University. </string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bda-Aj-AWk">
+                                        <rect key="frame" x="0.0" y="479" width="359" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="Go to Website"/>
+                                        <connections>
+                                            <action selector="websiteButtonPressed:" destination="WqX-nE-23e" eventType="touchUpInside" id="gAl-Om-apF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OBV-If-x1T" firstAttribute="top" secondItem="Xzk-xv-966" secondAttribute="top" constant="8" id="7L7-Sy-pc7"/>
+                            <constraint firstItem="Xzk-xv-966" firstAttribute="trailing" secondItem="OBV-If-x1T" secondAttribute="trailing" constant="8" id="Xha-ib-iG3"/>
+                            <constraint firstItem="Xzk-xv-966" firstAttribute="bottom" secondItem="OBV-If-x1T" secondAttribute="bottom" constant="32" id="be1-YQ-zP6"/>
+                            <constraint firstItem="OBV-If-x1T" firstAttribute="leading" secondItem="Xzk-xv-966" secondAttribute="leading" constant="8" id="cw2-Zg-33J"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Xzk-xv-966"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="markerDecriptionLabel" destination="UrL-On-jKr" id="9z8-vh-PQN"/>
+                        <outlet property="markerImageView" destination="02d-q3-Df8" id="ued-JB-MtO"/>
+                        <outlet property="markerNameLabel" destination="rd2-Tk-QYJ" id="3yt-JJ-0td"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rj-cB-KH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

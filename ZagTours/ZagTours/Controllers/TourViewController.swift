@@ -10,6 +10,11 @@ import UIKit
 
 class TourViewController: UIViewController {
 
+    @IBOutlet weak var markerNameLabel: UILabel!
+    @IBOutlet weak var markerImageView: UIImageView!
+    @IBOutlet weak var markerDecriptionLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,5 +26,9 @@ class TourViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+    }
+    
+    @IBAction func websiteButtonPressed(_ sender: UIButton) {
+        
     }
 }
