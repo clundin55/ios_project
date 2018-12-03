@@ -15,6 +15,7 @@ import MapKit
 class GoogleMapsViewController: UIViewController, GMSMapViewDelegate {
     
     @IBOutlet weak var campusMap: GMSMapView!
+    var zagmarkwrapper = ZagMarkWrapper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +34,14 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate {
         campusMap.isMyLocationEnabled = true
         campusMap.settings.myLocationButton = true
         
-        ZagMarkWrapper.populateMapWithZagMarks(campusMap: campusMap)
+        zagmarkwrapper.populateMapWithZagMarks(campusMap: campusMap)
     }
     
 
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-//        for zagMark in zagMarks {
-//            if zagMark.title == marker.title! {
-//                currentZagmark = zagMark
-//            }
-//        }
-
+        
+        zagmarkwrapper.setCurrentMarkerFromTitle(title: marker.title!)
+        // TODO: rename segue
         self.performSegue(withIdentifier: "arViewFromMarker", sender: nil)
         return true
     }
@@ -51,7 +49,7 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "arViewFromMarker" {
             if let tourViewController = segue.destination as? TourViewController {
-                tourViewController.marker = nil
+                tourViewController.marker = zagmarkwrapper.getCurrentMarkerFromTitle()
             }
         }
     }

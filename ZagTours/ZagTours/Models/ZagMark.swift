@@ -19,8 +19,10 @@ struct ZagMark {
 }
 
 struct ZagMarkWrapper {
-    static var zagMarks: [ZagMark] = []
-    static func populateMapWithZagMarks(campusMap: GMSMapView) {
+    var zagMarks: [ZagMark] = []
+    var currentZagMark: ZagMark? = nil
+    
+    mutating func populateMapWithZagMarks(campusMap: GMSMapView) {
         let guLat = 47.6671926
         let guLong = -117.4045736
         
@@ -33,9 +35,17 @@ struct ZagMarkWrapper {
         
         let tempMark = ZagMark(description: "Temp", title: "TempTitle", image: "None", websiteLink: "No website", googleMarker: marker)
         zagMarks.append(tempMark)
-        
-        
     }
     
+    func getCurrentMarkerFromTitle() -> ZagMark?{
+        return currentZagMark
+    }
     
+    mutating func setCurrentMarkerFromTitle(title: String){
+        for zagMark in zagMarks {
+            if zagMark.title == title {
+                currentZagMark = zagMark
+            }
+        }
+    }
 }
