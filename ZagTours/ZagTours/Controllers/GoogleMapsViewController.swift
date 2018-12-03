@@ -49,6 +49,7 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "arViewFromMarker" {
             if let tourViewController = segue.destination as? TourViewController {
+                print("Segeued")
                 tourViewController.marker = zagmarkwrapper.getCurrentMarkerFromTitle()
             }
         }

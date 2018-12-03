@@ -18,6 +18,7 @@ class TourViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(marker)
         if let marker = self.marker {
             updateLabels(mark: marker)
         }
