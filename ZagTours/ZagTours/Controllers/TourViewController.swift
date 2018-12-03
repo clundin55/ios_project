@@ -9,15 +9,13 @@
 import UIKit
 
 class TourViewController: UIViewController {
-    
     var marker: ZagMark? = nil
 
     @IBOutlet weak var markerNameLabel: UILabel!
     @IBOutlet weak var markerImageView: UIImageView!
     @IBOutlet weak var markerDecriptionLabel: UILabel!
     
-    
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
         
         if let marker = self.marker {
