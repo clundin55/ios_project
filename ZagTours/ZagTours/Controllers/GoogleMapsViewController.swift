@@ -49,7 +49,7 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "arViewFromMarker" {
-            if let arViewDestination = segue.destination as? TourArViewController {
+            if let arViewDestination = segue.destination as? TourViewController {
                 print("segue was succesful")
             }
         }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TourArViewController: UIViewController {
+class TourViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

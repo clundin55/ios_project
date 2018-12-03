@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="1826" y="125"/>
         </scene>
-        <!--Player View Controller-->
+        <!--Tour View Controller-->
         <scene sceneID="ytW-lg-BeK">
             <objects>
-                <viewController id="WqX-nE-23e" customClass="AVPlayerViewController" sceneMemberID="viewController">
+                <viewController id="WqX-nE-23e" customClass="TourViewController" customModule="ZagTours" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ruy-n8-VrN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

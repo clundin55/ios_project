@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		98CB07DBB7A157C84FFE3F3F /* Pods_ZagTours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA80674863681B48037FE6C /* Pods_ZagTours.framework */; };
-		A9CFD11221ABB8D7009936D9 /* TourArViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CFD11121ABB8D7009936D9 /* TourArViewController.swift */; };
+		A9CFD11221ABB8D7009936D9 /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CFD11121ABB8D7009936D9 /* TourViewController.swift */; };
 		A9CFD11421ABBEC8009936D9 /* ZagMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CFD11321ABBEC8009936D9 /* ZagMark.swift */; };
 		A9F72EF521AA2C3600A997F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F72EF421AA2C3600A997F3 /* AppDelegate.swift */; };
 		A9F72EF721AA2C3600A997F3 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F72EF621AA2C3600A997F3 /* GoogleMapsViewController.swift */; };
@@ -22,7 +22,7 @@
 /* Begin PBXFileReference section */
 		6F54B256F62957D04E0B4064 /* Pods-ZagTours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZagTours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZagTours/Pods-ZagTours.debug.xcconfig"; sourceTree = "<group>"; };
 		8788B8C043EE8BB2C62BA59A /* Pods-ZagTours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZagTours.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZagTours/Pods-ZagTours.release.xcconfig"; sourceTree = "<group>"; };
-		A9CFD11121ABB8D7009936D9 /* TourArViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourArViewController.swift; sourceTree = "<group>"; };
+		A9CFD11121ABB8D7009936D9 /* TourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
 		A9CFD11321ABBEC8009936D9 /* ZagMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZagMark.swift; sourceTree = "<group>"; };
 		A9F72EF121AA2C3600A997F3 /* ZagTours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZagTours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F72EF421AA2C3600A997F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 			children = (
 				A9F72EF621AA2C3600A997F3 /* GoogleMapsViewController.swift */,
 				A9F72F1021AA448800A997F3 /* StartScreenViewController.swift */,
-				A9CFD11121ABB8D7009936D9 /* TourArViewController.swift */,
+				A9CFD11121ABB8D7009936D9 /* TourViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 				A9F72EF721AA2C3600A997F3 /* GoogleMapsViewController.swift in Sources */,
 				A9F72EF521AA2C3600A997F3 /* AppDelegate.swift in Sources */,
 				A9F72F1121AA448800A997F3 /* StartScreenViewController.swift in Sources */,
-				A9CFD11221ABB8D7009936D9 /* TourArViewController.swift in Sources */,
+				A9CFD11221ABB8D7009936D9 /* TourViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
