@@ -18,11 +18,11 @@ struct ZagMark {
     var googleMarker: GMSMarker
 }
 
-struct ZagMarkWrapper {
+class ZagMarkWrapper {
     var zagMarks: [ZagMark] = []
     var currentZagMark: ZagMark? = nil
     
-    mutating func populateMapWithZagMarks(campusMap: GMSMapView) {
+    func populateMapWithZagMarks(campusMap: GMSMapView) {
         let guLat = 47.6671926
         let guLong = -117.4045736
         
@@ -41,9 +41,9 @@ struct ZagMarkWrapper {
         return currentZagMark
     }
     
-    mutating func setCurrentMarkerFromTitle(title: String){
+    func setCurrentMarkerFromTitle(title: String){
         for zagMark in zagMarks {
-            if zagMark.title == title {
+            if zagMark.googleMarker.title == title {
                 currentZagMark = zagMark
             }
         }

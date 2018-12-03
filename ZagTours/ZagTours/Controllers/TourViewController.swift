@@ -15,9 +15,10 @@ class TourViewController: UIViewController {
     @IBOutlet weak var markerImageView: UIImageView!
     @IBOutlet weak var markerDecriptionLabel: UILabel!
     
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(marker)
         if let marker = self.marker {
             updateLabels(mark: marker)
         }
