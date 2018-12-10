@@ -33,7 +33,7 @@ class ZagMarkWrapper {
         marker.icon = GMSMarker.markerImage(with: .blue)
         marker.map = campusMap
         
-        let tempMark = ZagMark(description: "Temp", title: "TempTitle", image: "None", websiteLink: "No website", googleMarker: marker)
+        let tempMark = ZagMark(description: "Temp", title: "TempTitle", image: "None", websiteLink: "https://www.gonzaga.edu/about/offices-services/gonzaga-university-event-service-team/venues/john-j-hemmingson-center", googleMarker: marker)
         zagMarks.append(tempMark)
     }
     

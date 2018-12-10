@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YCb-Q9-r4L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Etu-fu-Sen">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="16" y="301.5" width="343" height="30"/>
                                 <state key="normal" title="Start!"/>
                                 <connections>
-                                    <segue destination="suf-OH-Nef" kind="show" id="TmQ-dg-BHd"/>
+                                    <segue destination="suf-OH-Nef" kind="show" id="LEn-iT-J0g"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-Y1-gPo">
@@ -44,13 +44,48 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="ZagTour" id="Ear-Ed-Kfa">
                         <barButtonItem key="backBarButtonItem" title="Start" id="ZwL-Gp-TId"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="qr-code" id="37P-gC-FZw">
+                            <connections>
+                                <segue destination="4OV-rG-8ky" kind="show" id="jbo-sM-oBb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="124.58770614692655"/>
+            <point key="canvasLocation" x="2988" y="-552.77361319340332"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="JrU-yh-dJi">
+            <objects>
+                <viewController id="4OV-rG-8ky" customClass="QRScannerViewController" customModule="ZagTours" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lir-dG-njc" customClass="QRScannerViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJd-vt-a2y">
+                                <rect key="frame" x="166.5" y="80" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kJd-vt-a2y" firstAttribute="top" secondItem="TWb-L6-amP" secondAttribute="top" constant="16" id="0R1-gF-yXg"/>
+                            <constraint firstItem="kJd-vt-a2y" firstAttribute="centerX" secondItem="lir-dG-njc" secondAttribute="centerX" id="JZo-32-GV4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TWb-L6-amP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mCa-7C-iyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3878" y="-553"/>
         </scene>
         <!--Google Maps View Controller-->
         <scene sceneID="Kzr-wr-tGu">
@@ -83,6 +118,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hjP-p7-BPl"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="campusMap" destination="g6y-Bz-5iJ" id="Ibx-0K-F1f"/>
                         <segue destination="WqX-nE-23e" kind="show" identifier="arViewFromMarker" id="PFE-Bl-odv"/>
@@ -90,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kV-h8-tbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1826" y="125"/>
+            <point key="canvasLocation" x="2988" y="176"/>
         </scene>
         <!--Tour View Controller-->
         <scene sceneID="ytW-lg-BeK">
@@ -104,13 +142,13 @@
                                 <rect key="frame" x="8" y="72" width="359" height="519"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" text="Name of Marker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd2-Tk-QYJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="70.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="82.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="02d-q3-Df8">
-                                        <rect key="frame" x="0.0" y="94.5" width="359" height="214.5"/>
+                                        <rect key="frame" x="0.0" y="106.5" width="359" height="202.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrL-On-jKr">
                                         <rect key="frame" x="0.0" y="333" width="359" height="122"/>
@@ -149,25 +187,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rj-cB-KH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2574" y="125"/>
+            <point key="canvasLocation" x="3878" y="178"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Jfb-CX-blw">
+        <scene sceneID="htd-a4-jgs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YCb-Q9-r4L" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Etu-fu-Sen" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="imn-gf-BDg">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="osq-M4-IEi">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fm2-tx-NAT"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DOz-EA-eJq"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8N1-wX-K6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grk-tU-e6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="292" y="-573.46326836581716"/>
+            <point key="canvasLocation" x="2048.8000000000002" y="-552.77361319340332"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="qr-code" width="32" height="32"/>
+    </resources>
 </document>

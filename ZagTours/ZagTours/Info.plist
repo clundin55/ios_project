@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>In order to use the AR features the camera is needed.</string>
+	<string>We need camera access for the QR Scanner</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need your location in order to find nearby points of interest.</string>
 	<key>CFBundleDevelopmentRegion</key>
