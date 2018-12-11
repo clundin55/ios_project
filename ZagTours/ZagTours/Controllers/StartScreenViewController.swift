@@ -18,11 +18,15 @@ class StartScreenViewController: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "qrSegue" {
-            let noCameraAlert = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a QR code because it does not have a Camera or the app does not have permission to use it.", preferredStyle: .alert)
-            noCameraAlert.addAction(UIAlertAction(title: "OK", style: .default))
-            present(noCameraAlert, animated: true)
+            let hasCamera = UIImagePickerController.isSourceTypeAvailable(.camera)
             
-            return UIImagePickerController.isSourceTypeAvailable(.camera)
+            if !hasCamera {
+                let noCameraAlert = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a QR code because it does not have a Camera or the app does not have permission to use it.", preferredStyle: .alert)
+                noCameraAlert.addAction(UIAlertAction(title: "OK", style: .default))
+                present(noCameraAlert, animated: true)
+            }
+
+            return hasCamera
         }
         
         return true
