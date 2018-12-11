@@ -20,7 +20,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-Y1-gPo">
                                 <rect key="frame" x="16" y="293" width="343" height="101.5"/>
-                                <string key="text">Zag tours is an interactive app to give you a personalized tour across campus. By clicking a marker seen around campus you will start an Augmented Reality description for that landmark. To begin press start.</string>
+                                <string key="text">Zag tours is an interactive app to give you a personalized tour across campus. By clicking a marker seen around campus you can view a description and a picture of that landmark. To begin press start.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
