@@ -20,7 +20,7 @@ class ZagMarkWrapper {
         }
     }
     
-    func createMarkers(){
+    func createMarkers() {
         zagMarks = [ZagMark(description: "Temp", googleMarkerDescription: "Insert detailed description",title: "Gonzaga University", image: "None", websiteLink: "No website", googleMarker: GMSMarker(), position: CLLocationCoordinate2D(latitude: 47.6671926, longitude: -117.4045736))]
         
         for zagmark in zagMarks{
