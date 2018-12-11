@@ -19,8 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-Y1-gPo">
-                                <rect key="frame" x="16" y="293" width="343" height="101.5"/>
-                                <string key="text">Zag tours is an interactive app to give you a personalized tour across campus. By clicking a marker seen around campus you can view a description and a picture of that landmark. To begin press start.</string>
+                                <rect key="frame" x="16" y="293" width="343" height="122"/>
+                                <string key="text">Zag tours is an interactive app to give you a personalized tour across campus. By clicking a marker seen around campus you can view a description and a picture of that landmark. Each landmark has an associated web page. You can even use the built-in QR scanner to scan a QR code found around campus that links to a landmarks webpage. To begin press start.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -29,7 +29,7 @@
                                 <rect key="frame" x="16" y="80" width="343" height="197"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJT-o1-SOS">
-                                <rect key="frame" x="16" y="410.5" width="343" height="240.5"/>
+                                <rect key="frame" x="16" y="431" width="343" height="220"/>
                                 <state key="normal" title="Start!"/>
                                 <connections>
                                     <segue destination="suf-OH-Nef" kind="show" id="LEn-iT-J0g"/>
