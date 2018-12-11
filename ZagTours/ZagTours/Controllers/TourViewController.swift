@@ -31,10 +31,16 @@ class TourViewController: UIViewController {
     }
     
     @IBAction func websiteButtonPressed(_ sender: UIButton) {
-        if let marker = marker {
-            if let link = URL(string: marker.websiteLink) {
+        print("Button pressed")
+        if let marker = marker, let linkString = marker.websiteLink {
+            if let link = URL(string: linkString) {
                 UIApplication.shared.open(link)
             }
+        }
+        else {
+            let noLinkAlert = UIAlertController(title: "No website", message: "Sorry this location has no associated website.", preferredStyle: .alert)
+            noLinkAlert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(noLinkAlert, animated: true)
         }
     }
     

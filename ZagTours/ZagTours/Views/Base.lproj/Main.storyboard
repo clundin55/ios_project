@@ -53,10 +53,10 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="ZagTour" id="Ear-Ed-Kfa">
-                        <barButtonItem key="backBarButtonItem" title="Start" id="ZwL-Gp-TId"/>
+                        <barButtonItem key="backBarButtonItem" title="ZagTour" id="ZwL-Gp-TId"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="qr-code" id="37P-gC-FZw">
                             <connections>
-                                <segue destination="4OV-rG-8ky" kind="show" id="jbo-sM-oBb"/>
+                                <segue destination="4OV-rG-8ky" kind="show" identifier="qrSegue" id="jbo-sM-oBb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -157,7 +157,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <state key="normal" title="Go to Website"/>
                                         <connections>
-                                            <action selector="websiteButtonPressed:" destination="WqX-nE-23e" eventType="touchUpInside" id="gAl-Om-apF"/>
+                                            <action selector="websiteButtonPressed:" destination="WqX-nE-23e" eventType="touchUpInside" id="NNC-jD-lvL"/>
                                         </connections>
                                     </button>
                                 </subviews>

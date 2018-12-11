@@ -27,7 +27,6 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         if (captureSession.canAddInput(videoInput)) {
             captureSession.addInput(videoInput)
         } else {
-            failed()
             return
         }
         
@@ -39,7 +38,6 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             metadataOutput.metadataObjectTypes = [.qr]
         } else {
-            failed()
             return
         }
         
@@ -49,13 +47,6 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         view.layer.addSublayer(previewLayer)
         
         captureSession.startRunning()
-    }
-    
-    func failed() {
-        let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
-        captureSession = nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
