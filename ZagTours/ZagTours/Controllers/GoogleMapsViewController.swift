@@ -38,13 +38,10 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate {
         zagmarkwrapper.populateMapWithZagMarks(campusMap: campusMap)
     }
     
-
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         zagmarkwrapper.setCurrentMarkerFromTitle(title: marker.title!)
         // TODO: rename segue
         self.performSegue(withIdentifier: "arViewFromMarker", sender: nil)
-        return true
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

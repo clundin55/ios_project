@@ -1,64 +1,100 @@
-//
-//  QRScannerViewController.swift
-//  ZagTours
-//
-//  Created by Abrahms, Daniel Shane on 12/9/18.
-//  Copyright © 2018 Carl Lundin. All rights reserved.
-//
-
-import UIKit
 import AVFoundation
+import UIKit
 
+// tutorials/ Sources used
+// https://www.hackingwithswift.com/example-code/media/how-to-scan-a-qr-code
+// https://www.appcoda.com/barcode-reader-swift/
 class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    var captureSession: AVCaptureSession!
+    var previewLayer: AVCaptureVideoPreviewLayer!
     
-    var captureSession: AVCaptureSession?
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
-    var qrCodeFrameView:UIView?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
+        view.backgroundColor = UIColor.black
+        captureSession = AVCaptureSession()
         
-        guard let captureDevice = deviceDiscoverySession.devices.first else {
-            print("Failed to access rear camera")
-            return
-        }
+        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+        let videoInput: AVCaptureDeviceInput
         
         do {
-            let input = try AVCaptureDeviceInput(device: captureDevice)
-            
-            captureSession?.addInput(input)
-            
-            let captureMetadataOutput = AVCaptureMetadataOutput()
-            captureSession?.addOutput(captureMetadataOutput)
-            
-            captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
-            
-            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-            videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            videoPreviewLayer?.frame = view.layer.bounds
-            view.layer.addSublayer(videoPreviewLayer!)
-            
-            captureSession?.startRunning()
+            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
         } catch {
-            print(error)
             return
         }
-
-        // Do any additional setup after loading the view.
+        
+        if (captureSession.canAddInput(videoInput)) {
+            captureSession.addInput(videoInput)
+        } else {
+            failed()
+            return
+        }
+        
+        let metadataOutput = AVCaptureMetadataOutput()
+        
+        if (captureSession.canAddOutput(metadataOutput)) {
+            captureSession.addOutput(metadataOutput)
+            
+            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            metadataOutput.metadataObjectTypes = [.qr]
+        } else {
+            failed()
+            return
+        }
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.frame = view.layer.bounds
+        previewLayer.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(previewLayer)
+        
+        captureSession.startRunning()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func failed() {
+        let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+        captureSession = nil
     }
-    */
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if (captureSession?.isRunning == false) {
+            captureSession.startRunning()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if (captureSession?.isRunning == true) {
+            captureSession.stopRunning()
+        }
+    }
+    
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        captureSession.stopRunning()
+        
+        if let metadataObject = metadataObjects.first {
+            guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
+            guard let stringValue = readableObject.stringValue else { return }
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            found(code: stringValue)
+        }
+        
+        dismiss(animated: true)
+    }
+    
+    func found(code: String) {
+        print(code)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
 }
