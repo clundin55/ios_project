@@ -4,6 +4,7 @@ import UIKit
 // tutorials/ Sources used
 // https://www.hackingwithswift.com/example-code/media/how-to-scan-a-qr-code
 // https://www.appcoda.com/barcode-reader-swift/
+
 class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!

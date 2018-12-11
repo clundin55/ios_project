@@ -20,9 +20,7 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        campusMap.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
-        
+        campusMap.delegate = self        
         
         let guLat = 47.6683831
         let guLong = -117.4029954
@@ -40,14 +38,12 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         zagmarkwrapper.setCurrentMarkerFromTitle(title: marker.title!)
-        // TODO: rename segue
-        self.performSegue(withIdentifier: "arViewFromMarker", sender: nil)
+        self.performSegue(withIdentifier: "tourViewSegue", sender: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "arViewFromMarker" {
+        if segue.identifier == "tourViewSegue" {
             if let tourViewController = segue.destination as? TourViewController {
-                print("Segeued")
                 tourViewController.marker = zagmarkwrapper.getCurrentMarkerFromTitle()
             }
         }
