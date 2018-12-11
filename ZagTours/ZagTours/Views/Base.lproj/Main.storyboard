@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Etu-fu-Sen">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Etu-fu-Sen">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,36 +18,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-Y1-gPo">
-                                <rect key="frame" x="16" y="293" width="343" height="122"/>
-                                <string key="text">Zag tours is an interactive app to give you a personalized tour across campus. By clicking a marker seen around campus you can view a description and a picture of that landmark. Each landmark has an associated web page. You can even use the built-in QR scanner to scan a QR code found around campus that links to a landmarks webpage. To begin press start.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gu_logo" translatesAutoresizingMaskIntoConstraints="NO" id="QU5-7K-pqg">
-                                <rect key="frame" x="16" y="80" width="343" height="197"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJT-o1-SOS">
-                                <rect key="frame" x="16" y="431" width="343" height="220"/>
-                                <state key="normal" title="Start!"/>
-                                <connections>
-                                    <segue destination="suf-OH-Nef" kind="show" id="LEn-iT-J0g"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1ir-0P-6Kd">
+                                <rect key="frame" x="32" y="96" width="311" height="539"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-Y1-gPo">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="448"/>
+                                        <string key="text">Zag tours is an interactive app to give you a personalized tour across campus. By clicking a marker seen around campus you can view a description and a picture of that landmark. Each landmark has an associated web page. You can even use the built-in QR scanner to scan a QR code found around campus that links to a landmarks webpage.</string>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJT-o1-SOS">
+                                        <rect key="frame" x="0.0" y="464" width="311" height="75"/>
+                                        <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="Nam-tn-jdY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <state key="normal" title="Start!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="suf-OH-Nef" kind="show" id="LEn-iT-J0g"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="NJT-o1-SOS" firstAttribute="width" secondItem="Toe-Y1-gPo" secondAttribute="width" id="VKa-KG-phY"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Toe-Y1-gPo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="006-fH-6YN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Toe-Y1-gPo" secondAttribute="trailing" constant="16" id="4AA-95-rMZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NJT-o1-SOS" secondAttribute="bottom" constant="16" id="CtK-qh-Q4l"/>
-                            <constraint firstItem="Toe-Y1-gPo" firstAttribute="top" secondItem="QU5-7K-pqg" secondAttribute="bottom" constant="16" id="QOw-qr-cHa"/>
-                            <constraint firstItem="QU5-7K-pqg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Uah-38-FnL"/>
-                            <constraint firstItem="NJT-o1-SOS" firstAttribute="top" secondItem="Toe-Y1-gPo" secondAttribute="bottom" constant="16" id="VgF-wU-i4t"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NJT-o1-SOS" secondAttribute="trailing" constant="16" id="aaL-EV-3GH"/>
-                            <constraint firstItem="NJT-o1-SOS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eO8-vk-NIq"/>
-                            <constraint firstItem="QU5-7K-pqg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="jw8-nZ-xtp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QU5-7K-pqg" secondAttribute="trailing" constant="16" id="lS6-B3-FoL"/>
+                            <constraint firstItem="1ir-0P-6Kd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="9M1-ul-0mr"/>
+                            <constraint firstAttribute="trailing" secondItem="1ir-0P-6Kd" secondAttribute="trailing" constant="32" id="O2e-QB-sSI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1ir-0P-6Kd" secondAttribute="bottom" constant="32" id="Ojd-44-MpG"/>
+                            <constraint firstItem="1ir-0P-6Kd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="qFF-aO-6yL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -134,26 +142,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="OBV-If-x1T">
-                                <rect key="frame" x="8" y="72" width="359" height="519"/>
+                                <rect key="frame" x="8" y="80" width="359" height="511"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" text="Name of Marker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd2-Tk-QYJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="82.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="74.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="02d-q3-Df8">
-                                        <rect key="frame" x="0.0" y="106.5" width="359" height="202.5"/>
+                                        <rect key="frame" x="0.0" y="98.5" width="359" height="202.5"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrL-On-jKr">
-                                        <rect key="frame" x="0.0" y="333" width="359" height="122"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrL-On-jKr">
+                                        <rect key="frame" x="0.0" y="325" width="359" height="122"/>
                                         <string key="text">The mission of the John J. Hemmingson Center is to provide a warm and inviting atmosphere to all. The University Center is a meeting place for all students as well as faculty, staff, alumni and the guests of Gonzaga University. </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bda-Aj-AWk">
-                                        <rect key="frame" x="0.0" y="479" width="359" height="40"/>
+                                        <rect key="frame" x="0.0" y="471" width="359" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <state key="normal" title="Go to Website"/>
                                         <connections>
@@ -165,7 +173,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OBV-If-x1T" firstAttribute="top" secondItem="Xzk-xv-966" secondAttribute="top" constant="8" id="7L7-Sy-pc7"/>
+                            <constraint firstItem="OBV-If-x1T" firstAttribute="top" secondItem="Xzk-xv-966" secondAttribute="top" constant="16" id="BPn-2w-Xav"/>
                             <constraint firstItem="Xzk-xv-966" firstAttribute="trailing" secondItem="OBV-If-x1T" secondAttribute="trailing" constant="8" id="Xha-ib-iG3"/>
                             <constraint firstItem="Xzk-xv-966" firstAttribute="bottom" secondItem="OBV-If-x1T" secondAttribute="bottom" constant="32" id="be1-YQ-zP6"/>
                             <constraint firstItem="OBV-If-x1T" firstAttribute="leading" secondItem="Xzk-xv-966" secondAttribute="leading" constant="8" id="cw2-Zg-33J"/>
@@ -205,7 +213,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gu_logo" width="255" height="197"/>
-        <image name="qr-code" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="qr-code" width="32" height="32"/>
     </resources>
 </document>
