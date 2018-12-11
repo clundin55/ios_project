@@ -10,12 +10,14 @@ import Foundation
 import MapKit
 import GoogleMaps
 
-struct ZagMark {
+class ZagMark {
     var description: String
+    var googleMarkerDescription: String 
     var title: String
     var image: String
     var websiteLink: String
     var googleMarker: GMSMarker
+<<<<<<< HEAD
 }
 
 class ZagMarkWrapper {
@@ -36,16 +38,18 @@ class ZagMarkWrapper {
         let tempMark = ZagMark(description: "Temp", title: "TempTitle", image: "None", websiteLink: "https://www.gonzaga.edu/about/offices-services/gonzaga-university-event-service-team/venues/john-j-hemmingson-center", googleMarker: marker)
         zagMarks.append(tempMark)
     }
+=======
+    var position: CLLocationCoordinate2D
+>>>>>>> 33468db5fca218f0490c74f5b694c373fe8f1bb2
     
-    func getCurrentMarkerFromTitle() -> ZagMark?{
-        return currentZagMark
-    }
-    
-    func setCurrentMarkerFromTitle(title: String){
-        for zagMark in zagMarks {
-            if zagMark.googleMarker.title == title {
-                currentZagMark = zagMark
-            }
-        }
+    init(description: String, googleMarkerDescription: String, title: String, image: String, websiteLink: String, googleMarker: GMSMarker, position: CLLocationCoordinate2D) {
+        self.description = description
+        self.googleMarkerDescription = googleMarkerDescription
+        self.title = title
+        self.image = image
+        self.websiteLink = websiteLink
+        self.googleMarker = googleMarker
+        self.position = position
     }
 }
+

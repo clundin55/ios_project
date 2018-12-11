@@ -34,6 +34,7 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate {
         campusMap.isMyLocationEnabled = true
         campusMap.settings.myLocationButton = true
         
+        zagmarkwrapper.createMarkers()
         zagmarkwrapper.populateMapWithZagMarks(campusMap: campusMap)
     }
     
