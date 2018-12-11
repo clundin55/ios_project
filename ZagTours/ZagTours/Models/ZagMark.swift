@@ -14,12 +14,12 @@ class ZagMark {
     var description: String
     var googleMarkerDescription: String 
     var title: String
-    var image: String
+    var image: String?
     var websiteLink: String
     var googleMarker: GMSMarker
     var position: CLLocationCoordinate2D
     
-    init(description: String, googleMarkerDescription: String, title: String, image: String, websiteLink: String, googleMarker: GMSMarker, position: CLLocationCoordinate2D) {
+    init(description: String, googleMarkerDescription: String, title: String, image: String?, websiteLink: String, googleMarker: GMSMarker, position: CLLocationCoordinate2D) {
         self.description = description
         self.googleMarkerDescription = googleMarkerDescription
         self.title = title

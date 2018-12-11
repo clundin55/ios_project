@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Etu-fu-Sen">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Etu-fu-Sen">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,29 +18,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJT-o1-SOS">
-                                <rect key="frame" x="16" y="301.5" width="343" height="30"/>
-                                <state key="normal" title="Start!"/>
-                                <connections>
-                                    <segue destination="suf-OH-Nef" kind="show" id="LEn-iT-J0g"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-Y1-gPo">
-                                <rect key="frame" x="16" y="80" width="343" height="101.5"/>
+                                <rect key="frame" x="16" y="293" width="343" height="101.5"/>
                                 <string key="text">Zag tours is an interactive app to give you a personalized tour across campus. By clicking a marker seen around campus you will start an Augmented Reality description for that landmark. To begin press start.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gu_logo" translatesAutoresizingMaskIntoConstraints="NO" id="QU5-7K-pqg">
+                                <rect key="frame" x="16" y="80" width="343" height="197"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJT-o1-SOS">
+                                <rect key="frame" x="16" y="410.5" width="343" height="240.5"/>
+                                <state key="normal" title="Start!"/>
+                                <connections>
+                                    <segue destination="suf-OH-Nef" kind="show" id="LEn-iT-J0g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Toe-Y1-gPo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="KIa-hW-dZv"/>
-                            <constraint firstItem="Toe-Y1-gPo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ScU-5H-xhs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Toe-Y1-gPo" secondAttribute="trailing" constant="16" id="U1C-fg-yIB"/>
-                            <constraint firstItem="NJT-o1-SOS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="UyQ-vA-3tG"/>
-                            <constraint firstItem="NJT-o1-SOS" firstAttribute="top" secondItem="Toe-Y1-gPo" secondAttribute="bottom" constant="120" id="cP0-lr-2Pb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NJT-o1-SOS" secondAttribute="trailing" constant="16" id="cTp-Z2-qdl"/>
+                            <constraint firstItem="Toe-Y1-gPo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="006-fH-6YN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Toe-Y1-gPo" secondAttribute="trailing" constant="16" id="4AA-95-rMZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NJT-o1-SOS" secondAttribute="bottom" constant="16" id="CtK-qh-Q4l"/>
+                            <constraint firstItem="Toe-Y1-gPo" firstAttribute="top" secondItem="QU5-7K-pqg" secondAttribute="bottom" constant="16" id="QOw-qr-cHa"/>
+                            <constraint firstItem="QU5-7K-pqg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Uah-38-FnL"/>
+                            <constraint firstItem="NJT-o1-SOS" firstAttribute="top" secondItem="Toe-Y1-gPo" secondAttribute="bottom" constant="16" id="VgF-wU-i4t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NJT-o1-SOS" secondAttribute="trailing" constant="16" id="aaL-EV-3GH"/>
+                            <constraint firstItem="NJT-o1-SOS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eO8-vk-NIq"/>
+                            <constraint firstItem="QU5-7K-pqg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="jw8-nZ-xtp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QU5-7K-pqg" secondAttribute="trailing" constant="16" id="lS6-B3-FoL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -147,7 +154,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="02d-q3-Df8">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="02d-q3-Df8">
                                         <rect key="frame" x="0.0" y="106.5" width="359" height="202.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrL-On-jKr">
@@ -210,6 +217,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="qr-code" width="32" height="32"/>
+        <image name="gu_logo" width="255" height="197"/>
+        <image name="qr-code" width="25.600000381469727" height="25.600000381469727"/>
     </resources>
 </document>

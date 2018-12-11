@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12944F3321BE011E00DDF8AE /* qr-code.png in Resources */ = {isa = PBXBuildFile; fileRef = 12944F3221BE011E00DDF8AE /* qr-code.png */; };
 		12944F3521BE027700DDF8AE /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12944F3421BE027700DDF8AE /* QRScannerViewController.swift */; };
 		98CB07DBB7A157C84FFE3F3F /* Pods_ZagTours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA80674863681B48037FE6C /* Pods_ZagTours.framework */; };
 		A9C7374C21BDEEAA006BE0A9 /* ZagMarkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7374B21BDEEAA006BE0A9 /* ZagMarkWrapper.swift */; };
@@ -23,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		12944F3221BE011E00DDF8AE /* qr-code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "qr-code.png"; path = "../../../../../Downloads/qr-code.png"; sourceTree = "<group>"; };
 		12944F3421BE027700DDF8AE /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		6F54B256F62957D04E0B4064 /* Pods-ZagTours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZagTours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZagTours/Pods-ZagTours.debug.xcconfig"; sourceTree = "<group>"; };
 		8788B8C043EE8BB2C62BA59A /* Pods-ZagTours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZagTours.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZagTours/Pods-ZagTours.release.xcconfig"; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 				A9F72F0621AA2D6200A997F3 /* Controllers */,
 				A9F72EF421AA2C3600A997F3 /* AppDelegate.swift */,
 				A9F72EFB21AA2C3700A997F3 /* Assets.xcassets */,
-				12944F3221BE011E00DDF8AE /* qr-code.png */,
 				A9F72F0021AA2C3700A997F3 /* Info.plist */,
 				A9F72F0B21AA312A00A997F3 /* GoogleKeys.plist */,
 			);
@@ -195,7 +192,6 @@
 			files = (
 				A9F72F0F21AA3EFB00A997F3 /* GoogleKeys.plist in Resources */,
 				A9F72EFF21AA2C3700A997F3 /* LaunchScreen.storyboard in Resources */,
-				12944F3321BE011E00DDF8AE /* qr-code.png in Resources */,
 				A9F72EFC21AA2C3700A997F3 /* Assets.xcassets in Resources */,
 				A9F72EFA21AA2C3600A997F3 /* Main.storyboard in Resources */,
 			);
@@ -411,7 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B34BZU2TW8;
+				DEVELOPMENT_TEAM = GUYPJD4NUE;
 				INFOPLIST_FILE = ZagTours/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -431,7 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B34BZU2TW8;
+				DEVELOPMENT_TEAM = GUYPJD4NUE;
 				INFOPLIST_FILE = ZagTours/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

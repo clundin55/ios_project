@@ -18,12 +18,9 @@ class TourViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(marker as Any)
         if let marker = self.marker {
             updateLabels(mark: marker)
         }
-
-        // Do any additional setup after loading the view.
     }
     // MARK: - Navigation
 
@@ -43,8 +40,10 @@ class TourViewController: UIViewController {
     
     func updateLabels(mark: ZagMark) {
         self.markerNameLabel.text = mark.title
-        self.markerImageView.image = UIImage(named: mark.image)
         self.markerDecriptionLabel.text = mark.description
+        if let imageName = marker?.image {
+            self.markerImageView.image = UIImage(named: imageName)
+        }
         
     }
 }
